@@ -1,39 +1,30 @@
 # Dynamic-Calendar
-
-DYNAMIC CALENDAR APPLICATION:
-
 An user friendly calender application
-
- FEATURES:
-
+# FEATURES:
 1. View the entire month's calendar, with important dates highlighted.
 2. Add events with details like name, start time, end time and description(optional).
 3. Edit and Delete events quickly when plan changes and no loner needed.
 4. Automatically highlights today's date for convenience.
+# HOW TO RUN:
+   # Clone the Project:
+         git clone 
 
-HOW TO RUN:
+   # GO TO PROJECT FOLDER:
 
-Clone the Project:
+         cd dynamic-calendar
 
-git clone 
+# INSTALL THE NECESSARY PACKAGES:
 
-GO TO PROJECT FOLDER:
+  npm i
 
-cd dynamic-calendar
-
-INSTALL THE NECESSARY PACKAGES:
-
-npm i
-
-START THE APP:
+# START THE APP:
 
 npm start
 
-OPEN THE APP IN YOUR BROWSER:
+# OPEN THE APP IN YOUR BROWSER:
 
 http://localhost:3000
 
-LINKS:
     
 
 
