@@ -7,23 +7,23 @@ An user friendly calender application
 4. Automatically highlights today's date for convenience.
 # HOW TO RUN:
    # Clone the Project:
-         git clone 
+         git clone https://github.com/kaya-sujata/Dynamic-Calendar/edit/main/dynamic-calendar
 
    # GO TO PROJECT FOLDER:
 
          cd dynamic-calendar
 
-# INSTALL THE NECESSARY PACKAGES:
+   # INSTALL THE NECESSARY PACKAGES:
 
-  npm i
+         npm i
 
-# START THE APP:
+   # START THE APP:
 
-npm start
+        npm start
 
 # OPEN THE APP IN YOUR BROWSER:
 
-http://localhost:3000
+http://localhost:5173
 
     
 
