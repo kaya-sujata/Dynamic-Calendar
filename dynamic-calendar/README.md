@@ -11,7 +11,7 @@ An user friendly calender application
 
    # CLONE THE PROJECT:
 
-       git clone https://github.com/kaya-sujata/Dynamic-Calendar/edit/main/dynamic-calendar
+       git clone https://github.com/kaya-sujata/Dynamic-Calendar/
 
    # GO TO PROJECT FOLDER:
 
