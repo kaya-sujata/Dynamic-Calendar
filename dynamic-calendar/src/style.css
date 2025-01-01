@@ -1,0 +1,398 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+.app {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Calendar styling */
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.calendar-header button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.calendar-header button:hover {
+  background-color: #45a049;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 30px; /* Reduced gap between dates */
+  grid-auto-rows: 60px; /* Slightly further decreased the height of the date cells */
+  margin-bottom: 30px;
+}
+/* Calendar day styling */
+.calendar-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  /* Removed border */
+}
+
+/* Highlight today's date */
+.calendar-day.today {
+  background-color: #4CAF50;  /* Green color for today */
+  color: white;
+  font-weight: bold;
+}
+
+/* Add events indicator */
+.calendar-day.has-events::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  margin-top: 6px;
+}
+
+/* Hover effect for calendar days */
+.calendar-day:hover {
+  background-color: #f1f1f1;
+}
+
+
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 12px; /* Reduced padding slightly */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px; /* Slightly smaller font size */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.day:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.05);
+}
+
+.day.selected {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.event-indicator {
+  background-color: #4CAF50;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 6px;
+}
+
+/* Event List Container */
+.event-list {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Heading Styling */
+.event-list h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Event Items List */
+.event-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.event-list li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Event Name */
+.event-list li h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #4CAF50;
+}
+
+/* Event Time */
+.event-list li p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Buttons Styling - Side by Side */
+.event-list li button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100px;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+/* Layout for Buttons Side by Side */
+.event-list li button:nth-child(4),  /* Delete Button */
+.event-list li button:nth-child(5) {  /* Edit Button */
+  margin-right: 10px;  /* Space between buttons */
+}
+
+/* Buttons Hover Effect */
+.event-list button:hover {
+  background-color: #45a049;
+}
+
+/* No Events Message */
+.event-list p {
+  text-align: center;
+  font-size: 16px;
+  color: #888;
+}
+
+/* Edit Event Form */
+.edit-event {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-event h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.edit-event input,
+.edit-event textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+/* Textarea Styling */
+.edit-event textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* Focus State */
+.edit-event input:focus,
+.edit-event textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.2);
+  outline: none;
+}
+
+/* Update Button Styling */
+.edit-event button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.edit-event button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .event-list {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .event-list h2 {
+    font-size: 20px;
+  }
+
+  .event-list li {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .edit-event {
+    padding: 15px;
+  }
+
+  .edit-event input,
+  .edit-event textarea,
+  .edit-event button {
+    font-size: 14px;
+  }
+
+  .event-list button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* Event Form container */
+.event-form {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+/* Heading Styling */
+.event-form h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input fields and Textarea Styling */
+.event-form input,
+.event-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Textarea Styling */
+.event-form textarea {
+  height: 150px; /* Adjust height to make the textarea bigger */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+/* Focus State */
+.event-form input:focus,
+.event-form textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.2);
+  outline: none;
+}
+
+/* Button Styling */
+.event-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.event-form button:hover {
+  background-color: #45a049;
+}
+
+/* Spacing Between Fields */
+.event-form input,
+.event-form textarea {
+  margin-bottom: 16px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .event-form {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .event-form h2 {
+    font-size: 20px;
+  }
+
+  .event-form input,
+  .event-form textarea,
+  .event-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
